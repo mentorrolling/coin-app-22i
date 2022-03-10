@@ -43,3 +43,13 @@ body {
 .img-icon {
   width: 30px;
 }
+
+.card-login {
+  display: flex;
+  min-height: 500px;
+  justify-content: center;
+  align-items: center;
+}
+.card-login img {
+  width: 100px;
+}
