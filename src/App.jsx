@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Error404 from "./pages/Error404";
 import Home from "./pages/Home";
 import LoginScreen from "./pages/LoginScreen";
+import CoinScreen from "./pages/CoinScreen";
 import ProtectedRoutes from "./routes/ProtectedRoutes";
 
 import "./css/styles.css";
@@ -15,6 +16,14 @@ const App = () => {
           element={
             <ProtectedRoutes>
               <Home />
+            </ProtectedRoutes>
+          }
+        />
+        <Route
+          path="coin/:coinId"
+          element={
+            <ProtectedRoutes>
+              <CoinScreen />
             </ProtectedRoutes>
           }
         />

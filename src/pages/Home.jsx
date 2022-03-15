@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import CoinPagination from "../components/CoinPagination";
 import CoinTable from "../components/CoinTable";
 import { getCoins } from "../helpers/coinFetch";
 
@@ -13,28 +14,32 @@ const Home = () => {
 
   const [update, setUpdate] = useState(false);
 
+  const [pagina, setPagina] = useState(0);
+
   useEffect(() => {
-    getCoins().then((respuesta) => {
-      console.log(respuesta);
+    getCoins(pagina).then((respuesta) => {
       setCoins({
         loading: false,
         datos: respuesta,
       });
     });
-  }, [update]);
+  }, [update, pagina]);
 
   return (
     <div className="container">
       <div className="row mt-5">
-        <div className="col">
+        <div className="col-12 col-md-10 offset-md-1">
           {coins.loading ? (
             <h3 className="text-white text-center">Cargando información...</h3>
           ) : (
-            <CoinTable
-              update={update}
-              setUpdate={setUpdate}
-              datos={coins.datos}
-            />
+            <>
+              <CoinTable
+                update={update}
+                setUpdate={setUpdate}
+                datos={coins.datos}
+              />
+              <CoinPagination pagina={pagina} setPagina={setPagina} />
+            </>
             // <table className="table table-coin">
             //   <thead>
             //     <tr>

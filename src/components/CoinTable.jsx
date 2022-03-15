@@ -1,6 +1,7 @@
 import React from "react";
 import numeral from "numeral";
 import CoinIcon from "./CoinIcon";
+import { Link } from "react-router-dom";
 
 const CoinTable = ({ update, setUpdate, datos }) => {
   return (
@@ -14,7 +15,7 @@ const CoinTable = ({ update, setUpdate, datos }) => {
           <th>VWAP(24hs)</th>
           <th>Supply</th>
           <th>Volume(24hs)</th>
-          <th>Change(24hs)</th>
+          {/* <th>Change(24hs)</th> */}
           <th>
             <button className="btn btn-coin" onClick={() => setUpdate(!update)}>
               Update
@@ -28,7 +29,9 @@ const CoinTable = ({ update, setUpdate, datos }) => {
             <td className="text-center">{coin.rank}</td>
             <td className="d-flex justify-content-between">
               <CoinIcon symbol={coin.symbol} />
-              {coin.name}
+              <Link className="nav-link" to={`/coin/${coin.id}`}>
+                {coin.name}
+              </Link>
             </td>
             <td>{numeral(coin.priceUsd).format("$0,0.00")}</td>
             <td>{numeral(coin.marketCapUsd).format("($ 0.00 a)")}</td>
