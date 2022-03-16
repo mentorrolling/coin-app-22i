@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { searchCoinByName } from "../helpers/coinFetch";
+// import { searchCoinByName } from "../helpers/coinFetch";
 
 const CoinSearch = () => {
   useEffect(() => {}, []);

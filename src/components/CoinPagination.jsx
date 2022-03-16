@@ -1,5 +1,4 @@
 import React from "react";
-import { Pagination } from "react-bootstrap";
 
 const CoinPagination = ({ pagina, setPagina }) => {
   const paginacion = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
