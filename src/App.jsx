@@ -6,6 +6,7 @@ import CoinScreen from "./pages/CoinScreen";
 import ProtectedRoutes from "./routes/ProtectedRoutes";
 
 import "./css/styles.css";
+import "font-awesome/css/font-awesome.css";
 
 const App = () => {
   return (

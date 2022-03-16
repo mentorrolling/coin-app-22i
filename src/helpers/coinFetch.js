@@ -15,7 +15,7 @@ export const getCoinId = async (id) => {
 
 export const searchCoinByName = async (termino) => {
   const resp = await fetch(
-    `https://api.coincap.io/v2/assets?api-key=69ae8b08-db21-448a-b1c5-c344a5501628&search=${termino}`
+    `https://api.coincap.io/v2/assets?api-key=69ae8b08-db21-448a-b1c5-c344a5501628&search=${termino}&limit=10`
   );
 
   const { data } = await resp.json();
