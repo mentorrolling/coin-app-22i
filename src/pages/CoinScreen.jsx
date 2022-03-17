@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import numeral from "numeral";
 import CoinIcon from "../components/CoinIcon";
 
@@ -33,7 +33,7 @@ const CoinScreen = () => {
             <div className="alert alert-primary text-center" role="alert">
               Cargando información...
             </div>
-          ) : (
+          ) : datos ? (
             <div className="card mb-3 table-coin">
               <div className="row g-0">
                 <div className="col-md-4 logo-icon">
@@ -87,6 +87,13 @@ const CoinScreen = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          ) : (
+            <div className="alert alert-danger text-center" role="alert">
+              No se encontró información de la búsqueda solicitada
+              <Link className="nav-link" to="/">
+                <i className="fa fa-chevron-left" aria-hidden="true"></i> Volver
+              </Link>
             </div>
           )}
         </div>
